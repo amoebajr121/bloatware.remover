@@ -45,7 +45,11 @@ echo.
 
 echo Deleting Mi Coin
 adb shell pm uninstall -k --user 0 com.xiaomi.payment
-echo Deleting GetApps
+echo Deleting Xiaomi Wallet
+adb shell pm uninstall -k --user 0 com.mipay.wallet
+echo Deleting GetApps Old
+adb shell pm uninstall -k --user 0 com.xiaomi.market
+echo Deleting GetApps New
 adb shell pm uninstall -k --user 0 com.xiaomi.mipicks
 echo Deleting Mi Browser
 adb shell pm uninstall -k --user 0 com.mi.globalbrowser
@@ -57,12 +61,23 @@ echo Deleting Pusat Permainan
 adb shell pm uninstall -k --user 0 com.xiaomi.glgm
 echo Deleting App vault
 adb shell pm uninstall -k --user 0 com.miui.personalassistant
+echo Deleting App Vault Global ROM
+adb shell pm uninstall -k --user 0 com.mi.globalminusscreen
 echo Deleting Interconnectivity services
 adb shell pm uninstall -k --user 0 com.milink.service
 echo Deleting Mi Mover
 adb shell pm uninstall -k --user 0 com.miui.huanji
 echo Deleting Mi Drive
 adb shell pm uninstall -k --user 0 com.miui.newmidrive
+echo Deleting Xiaomi Email
+adb shell pm uninstall -k --user 0 com.android.email
+echo Deleting Xiaomi Notes
+adb shell pm uninstall -k --user 0 com.miui.notes
+echo Deleting Xiaomi Analytics
+adb shell pm uninstall -k --user 0 com.miui.analytics
+echo Deleting Mi Wallpaper Carousel
+adb shell pm uninstall -k --user 0 com.mfashiongallery.emag
+
 
 echo.
 cls
