@@ -18,7 +18,7 @@ echo 11 - Remove (Xiaomi) apps (Specially Bloatware Apps)
 echo 02 - Remove Google Apps (Only Google Assistant, Google Movie, Music Removed, Google Duo) 
 echo 03 - Remove System updates (Vivo) (This will disable your software update From vivo)
 echo 04 - Remove Facebook Apps Service (This app consume lot of battery)
-echo 05 - Remove Imanager (Vivo) (Only Imanager)
+echo 05 - Remove IManager (Vivo) (Only IManager)
 echo 06 - Remove Touchpal (Vivo) (Complete Removal)
 echo 00 - Exit
 echo.
@@ -55,7 +55,14 @@ echo Deleting msa
 adb shell pm uninstall -k --user 0 com.miui.msa.global
 echo Deleting Pusat Permainan
 adb shell pm uninstall -k --user 0 com.xiaomi.glgm
-
+echo Deleting App vault
+adb shell pm uninstall -k --user 0 com.miui.personalassistant
+echo Deleting Interconnectivity services
+adb shell pm uninstall -k --user 0 com.milink.service
+echo Deleting Mi Mover
+adb shell pm uninstall -k --user 0 com.miui.huanji
+echo Deleting Mi Drive
+adb shell pm uninstall -k --user 0 com.miui.newmidrive
 
 echo.
 cls
