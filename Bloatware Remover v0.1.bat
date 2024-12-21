@@ -17,6 +17,7 @@ echo 01 - Remove (Vivo) apps (Specially Bloatware Apps)
 echo 11 - Remove (Xiaomi) apps (Specially Bloatware Apps)
 echo 02 - Remove Google Apps (Only Google Assistant, Google Movie, Music Removed, Google Duo) 
 echo 03 - Remove System updates (Vivo) (This will disable your software update From vivo)
+echo 33 - Remove System updates (Xiaomi) (This will disable your OS update From Xiaomi)
 echo 04 - Remove Facebook Apps Service (This app consume lot of battery)
 echo 05 - Remove IManager (Vivo) (Only IManager)
 echo 06 - Remove Touchpal (Vivo) (Complete Removal)
@@ -27,6 +28,7 @@ if %choose%==01 goto remove_vivoapp
 if %choose%==11 goto remove_xiaomiapp
 if %choose%==02 goto google_app
 if %choose%==03 goto System_update_Vivo
+if %choose%==33 goto System_update_Xiaomi
 if %choose%==04 goto facebook_app
 if %choose%==05 goto imanager_vivo
 if %choose%==06 goto remove_touch
@@ -45,38 +47,58 @@ echo.
 
 echo Deleting Mi Coin
 adb shell pm uninstall -k --user 0 com.xiaomi.payment
+
 echo Deleting Xiaomi Wallet
 adb shell pm uninstall -k --user 0 com.mipay.wallet
+
 echo Deleting GetApps Old
 adb shell pm uninstall -k --user 0 com.xiaomi.market
+
 echo Deleting GetApps New
 adb shell pm uninstall -k --user 0 com.xiaomi.mipicks
+
 echo Deleting Mi Browser
 adb shell pm uninstall -k --user 0 com.mi.globalbrowser
+
 echo Deleting Video Player
 adb shell pm uninstall -k --user 0 com.miui.VideoPlayer
+
 echo Deleting msa
 adb shell pm uninstall -k --user 0 com.miui.msa.global
+
 echo Deleting Pusat Permainan
 adb shell pm uninstall -k --user 0 com.xiaomi.glgm
+
 echo Deleting App vault
 adb shell pm uninstall -k --user 0 com.miui.personalassistant
+
 echo Deleting App Vault Global ROM
 adb shell pm uninstall -k --user 0 com.mi.globalminusscreen
+
 echo Deleting Interconnectivity services
 adb shell pm uninstall -k --user 0 com.milink.service
+
 echo Deleting Mi Mover
 adb shell pm uninstall -k --user 0 com.miui.huanji
+
 echo Deleting Mi Drive
 adb shell pm uninstall -k --user 0 com.miui.newmidrive
+
 echo Deleting Xiaomi Email
 adb shell pm uninstall -k --user 0 com.android.email
+
 echo Deleting Xiaomi Notes
 adb shell pm uninstall -k --user 0 com.miui.notes
+
 echo Deleting Xiaomi Analytics
 adb shell pm uninstall -k --user 0 com.miui.analytics
+
 echo Deleting Mi Wallpaper Carousel
 adb shell pm uninstall -k --user 0 com.mfashiongallery.emag
+
+echo Deleting Yellow Page
+adb shell pm uninstall -k --user 0 com.miui.yellowpage
+
 
 
 echo.
@@ -185,11 +207,11 @@ adb shell pm uninstall -k --user 0 com.google.android.googlequicksearchbox
 echo Deleting Youtube
 adb shell pm uninstall -k --user 0 com.google.android.youtube
 
-echo Deleting  assistant
+echo Deleting  Assistant
 adb shell pm uninstall -k --user 0 com.google.android.apps.googleassistant
 
 echo Deleting  Google Music
-adb shell pm uninstall -k --user 0 com.google.android.music
+adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music
 
 echo Deleting  Google Movies
 adb shell pm uninstall -k --user 0 com.google.android.videos
@@ -221,10 +243,22 @@ exit
 
 :System_update_Vivo
 echo.
-echo Deleting  System Update
+echo Deleting System Update Vivo
 adb shell pm uninstall -k --user 0 com.bbk.updater
 echo.
 cls
+
+echo.
+echo Done
+echo.
+
+goto :menu
+exit
+
+:System_update_Xiaomi
+echo.
+echo Deleting Updater Xiaomi OS
+adb shell pm uninstall -k --user 0 com.android.updater
 
 echo.
 echo Done
