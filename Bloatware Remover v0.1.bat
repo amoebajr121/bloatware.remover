@@ -231,6 +231,12 @@ adb shell pm uninstall -k --user 0 com.google.android.feedback
 echo Deleting Google Lens
 adb shell pm uninstall -k --user 0 com.google.ar.lens
 
+echo Deleting Health Connect
+adb shell pm uninstall -k --user 0 com.google.android.healthconnect.controller
+
+echo Deleting Health Connect
+adb shell pm uninstall -k --user 0 com.google.android.apps.healthdata
+
 echo.
 cls
 
